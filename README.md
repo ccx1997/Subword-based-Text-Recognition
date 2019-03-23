@@ -4,6 +4,7 @@ Motivations are as follows:
 2. We can relieve the pressure of memory by LSTM, i.e., LSTM only need to remember the root and affix rather than the big number of whole-words requiring lots of samples, and is friendly to gradient propagation.
 
 Some examples which show the weakness of word-based methods like CRNN (suffered from their memory on the lexicon in trainset):
+
 ![Image text](https://github.com/ccx1997/Root-Affix-based-Text-Recognition/blob/master/imgs/demo4.jpg)
 h---e-r--l-o-w-o--r-i-d--- => herloworid
 
