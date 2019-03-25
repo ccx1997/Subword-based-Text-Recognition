@@ -5,24 +5,48 @@ Motivations are as follows:
 
 Some examples which show the weakness of word-based methods like CRNN (suffered from their memory on the lexicon in trainset):
 
+![Image text](https://github.com/ccx1997/Root-Affix-based-Text-Recognition/blob/master/imgs/demo1.jpg)
+aa------u----t--o---l--d----e---n---t--ii-f--y---- => autoldentify
+
+![Image text](https://github.com/ccx1997/Root-Affix-based-Text-Recognition/blob/master/imgs/demo2.jpg)
+i---d----ee--n---t--ii-f--y---- => identify
+
+![Image text](https://github.com/ccx1997/Root-Affix-based-Text-Recognition/blob/master/imgs/demo3.jpg)
+m------a--t-h--l--y--p-e---- => mathlype
+
 ![Image text](https://github.com/ccx1997/Root-Affix-based-Text-Recognition/blob/master/imgs/demo4.jpg)
-h---e-r--l-o-w-o--r-i-d--- => herloworid
+t----y--p--e---      => type
 
 ![Image text](https://github.com/ccx1997/Root-Affix-based-Text-Recognition/blob/master/imgs/demo5.jpg)
-h------ee---l---l---o----- => hello
+cc-------a----r---e----y---o-----v----v----e---r---k---d---ll-llo----w-----hh--f-- => careyovverkdllowhf
 
 ![Image text](https://github.com/ccx1997/Root-Affix-based-Text-Recognition/blob/master/imgs/demo6.jpg)
-w-------o---r---l---d----- => world
+v------e---r---k--   => verk
 
 ![Image text](https://github.com/ccx1997/Root-Affix-based-Text-Recognition/blob/master/imgs/demo7.jpg)
-t---o-bb-e-f-u--l-u-u--n-- => tobefuluun
+v------e----f---     => vef
 
 ![Image text](https://github.com/ccx1997/Root-Affix-based-Text-Recognition/blob/master/imgs/demo8.jpg)
-ff----u---u---u--u---n---- => fuuuun
+h------o----o---o----c----o---o----o----c--k----- => hooocooock
 
 ![Image text](https://github.com/ccx1997/Root-Affix-based-Text-Recognition/blob/master/imgs/demo9.jpg)
-t-eed-e-sfllav-r-en-ceeu-l => tedesflavrenceul
+0--------0-----0-----0-----0-----0-----0-----0-----0-----0------ => 0000000000
 
 ![Image text](https://github.com/ccx1997/Root-Affix-based-Text-Recognition/blob/master/imgs/demo10.jpg)
-s--t-l-aa-w---r-e-n--c-e-- => stlawrence
+g-----o---o---o---c---o---o---o---o--g---l--e--- => gooocoooogle
 
+![Image text](https://github.com/ccx1997/Root-Affix-based-Text-Recognition/blob/master/imgs/demo11.jpg)
+l----u--u---u--d---a--g---a--y--u---c--k--- => luuudagayuck
+
+![Image text](https://github.com/ccx1997/Root-Affix-based-Text-Recognition/blob/master/imgs/demo12.jpg)
+y-----o--u---d----d---a---d--- => youddad
+
+![Image text](https://github.com/ccx1997/Root-Affix-based-Text-Recognition/blob/master/imgs/demo13.jpg)
+g------i--v--e--l-l---e---f---i--v--e--- => givellefive
+
+![Image text](https://github.com/ccx1997/Root-Affix-based-Text-Recognition/blob/master/imgs/demo14.jpg)
+e----mm------e---    => eme
+
+The memory got by LSTM can help to recognize some ambiguous character (e.g., l, o) using the context in one hand, but in other hand limit the ability to recognize out-of-vocabulary words which have somewhat different compositional styles from words in training set.
+
+So we decide to use subword-based method to make RNN only care about the sub-region of a whole word to approach the problem above. It can probabaly reduce the needs of large amount of training data since a word in our method should consist of subwords, showing more intelligence in processing text line.
